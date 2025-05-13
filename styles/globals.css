@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+    /* breakpoint */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+
+  /* colors */
+  --color-primary: #01000a;              /* Biru terang → digunakan untuk CTA dan link teks */
+  --color-secondary: #1e293b;            /* Abu gelap → background utama */
+  --color-accent: #3b82f6;               /* Biru aksen → tombol hover / elemen penting */
+  --color-accent-hover: #60a5fa;         /* Biru yang lebih terang untuk hover */
+  --color-tertiary: #facc15;             /* Kuning terang → icon atau highlight */
+  --color-tertiary-hover: #fde047;       /* Kuning hover untuk efek interaksi */
+
+  --fonts-primary: 'Inter', sans-serif;     /* Font utama, terlihat modern & clean */
+  --fonts-secondary: 'Space Grotesk', sans-serif;       /* Untuk heading atau special use */
+}

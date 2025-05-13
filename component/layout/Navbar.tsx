@@ -1,0 +1,61 @@
+'use client'
+import React, { useState } from 'react'
+import { motion } from "motion/react"
+import Link from 'next/link'
+import Image from 'next/image'
+
+function Navigation() {
+  return (
+    <ul className='nav-ul flex flex-col gap-6'>
+      <li className='nav-li'>
+        <Link className='nav-link' href={"/"}>
+          Home
+        </Link>
+      </li>
+      <li className='nav-li'>
+        <Link className='nav-link' href={"/"}>
+          About
+        </Link>
+      </li>
+      <li className='nav-li'>
+        <Link className='nav-link' href={"/"}>
+          Projects
+        </Link>
+      </li>
+      <li className='nav-li'>
+        <Link className='nav-link' href={"/"}>
+          Skills
+        </Link>
+      </li>
+    </ul>
+  )
+}
+
+export default function Navbar() {
+  const[isOpen, setIsOpen] = useState(false);
+  return (
+    <div className='fixed w-full inset-x-0 z-20 backdrop-blur-lg block md:hidden'>
+      <div className='mx-auto px-2 max-w-7xl'>
+        <div className='flex items-center justify-between py-2'>
+          <Link href={"/"} className='text-white font-bold text-lg transition-colors hover:text-primary pl-2'>Trian</Link>
+          <button onClick={() => setIsOpen(!isOpen)} className='px-2'>
+            <Image src={isOpen ? "/assets/close.svg" : "/assets/menu.svg"} width={24} height={24} alt='toggle'/>
+          </button>
+        </div>
+      </div>
+
+      {isOpen && (
+        <motion.div 
+        className='block overflow-hidden text-center pt-2'
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0}}
+        style={{ maxHeight: "100vh" }}
+        transition={{ duration: 1 }}
+        >
+        <nav className='pb-5'>
+          <Navigation />
+        </nav>
+      </motion.div>)}
+    </div>
+  )
+}

@@ -27,6 +27,11 @@ function Navigation() {
           Skills
         </Link>
       </li>
+      <li className='nav-li'>
+        <Link className='nav-link' href={"/"}>
+          Contact
+        </Link>
+      </li>
     </ul>
   )
 }
@@ -46,11 +51,11 @@ export default function Navbar() {
 
       {isOpen && (
         <motion.div 
-        className='block overflow-hidden text-center pt-2'
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0}}
-        style={{ maxHeight: "100vh" }}
-        transition={{ duration: 1 }}
+          className='block overflow-hidden text-center pt-30'
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0}}
+          style={{ maxHeight: "100vh" }}
+          transition={{ duration: 0.5 }}
         >
         <nav className='pb-5'>
           <Navigation />

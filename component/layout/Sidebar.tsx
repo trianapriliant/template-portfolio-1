@@ -3,6 +3,7 @@
     import { TbButterfly } from "react-icons/tb";
     import Link from "next/link";
     import { usePathname } from "next/navigation";
+    import Lable from "../feature/Lable";
 
     const navItems = [
     { label: "Home", href: "/" },
@@ -16,7 +17,7 @@
     const pathname = usePathname();
 
     return (
-        <aside className="fixed top-0 left-0 h-screen w-[60px] bg-primary text-white hidden md:flex flex-col items-center justify-between py-6 z-50">
+        <aside data-theme="dark" className="fixed top-0 left-0 h-screen w-[60px] bg-base-300 text-white hidden md:flex flex-col items-center justify-between py-6 z-50">
         {/* Logo */}
         <div className="text-2xl font-bold">T</div>
 
@@ -43,6 +44,7 @@
             <TbButterfly />
             <FaFigma />
             <FaGithub />
+            <Lable />
         </div>
         </aside>
     );

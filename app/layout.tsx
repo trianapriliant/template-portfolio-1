@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "/styles/globals.css";
 import Sidebar from "@/component/layout/Sidebar";
 import Navbar from "@/component/layout/Navbar";
+import Footer from "@/component/layout/Footer";
 
 const inter = Inter({
   variable: "--font-primary",
@@ -22,11 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${inter.variable} antialiased bg-primary`}
+        data-theme="dark"
+        className={`${inter.variable} ${inter.variable} antialiased bg-base-300`}
       >
         <Sidebar />
         <Navbar />
-        <main className="ml-[80px] min-h-screen">{children}</main>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
